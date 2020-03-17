@@ -1,0 +1,18 @@
+<a routerLink="">Home</a>
+<table class="table table-hover table-striped">
+  <thead>
+  <tr>
+    <th scope="col" colspan="2">Done List</th>
+    <th scope="col" colspan="2">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books; index as index">
+    <td scope="col" colspan="2">{{book.name}}</td>
+    <td scope="col" colspan="2">
+      <button (click)="onClick(index)" class="btn btn-outline-info">Read Again</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<a routerLink="/reading">Reading List</a>

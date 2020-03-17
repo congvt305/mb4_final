@@ -1,0 +1,25 @@
+<a routerLink="">Home</a>
+<table class="table table-hover table-striped">
+  <thead>
+  <tr>
+    <th scope="col" colspan="2">Reading List</th>
+    <th scope="col" colspan="2">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books; index as index">
+    <td scope="col" colspan="2">{{book.name}}</td>
+    <td><button (click)="updateBook(index)" class="btn btn-outline-info">Move to done</button></td>
+  </tr>
+  <tr>
+    <td scope="col" colspan="2">
+      <form [formGroup]="newReadingBook" (ngSubmit)="onSubmit(newReadingBook.value)">
+        <label>Add new book to reading list:</label>
+        <input type="text" class="form-control-range" formControlName="name" placeholder="Input new book title">
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<a routerLink="/read">Done list</a>
